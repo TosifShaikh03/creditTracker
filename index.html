@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS v4</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
+    <div class="w-full max-w-5xl bg-white shadow-lg rounded-lg p-6">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Business Credit (Udhar) Dashboard</h1>
+
+        <!-- Form to Add Credit Entry -->
+        <form id="creditForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div>
+                <label for="customerName" class="block text-sm font-medium text-gray-700">Customer Name</label>
+                <input type="text" id="customerName" class="mt-1 w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <div>
+                <label for="itemPurchased" class="block text-sm font-medium text-gray-700">Item Purchased</label>
+                <input type="text" id="itemPurchased" class="mt-1 w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <div>
+                <label for="creditAmount" class="block text-sm font-medium text-gray-700">Credit Amount (₹)</label>
+                <input type="number" id="creditAmount" min="0" class="mt-1 w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <div>
+                <label for="creditDate" class="block text-sm font-medium text-gray-700">Date</label>
+                <input type="date" id="creditDate" class="mt-1 w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <div>
+                <label for="phoneNumber" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                <input type="tel" id="phoneNumber" pattern="[0-9]{10}" placeholder="1234567890" class="mt-1 w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <div class="md:col-span-2">
+                <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Add Credit Entry</button>
+            </div>
+        </form>
+
+        <!-- Search Input -->
+        <div class="mb-6">
+            <label for="searchInput" class="block text-sm font-medium text-gray-700">Search by Customer Name</label>
+            <input type="text" id="searchInput" class="mt-1 w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Enter customer name...">
+        </div>
+
+        <!-- Card Container for Credit Entries -->
+        <div id="creditCardContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+        <!-- Total Credit Amount -->
+        <div class="mt-8 text-right">
+            <p class="text-lg font-semibold">Total Credit: ₹<span id="totalCredit">0</span></p>
+        </div>
+    </div>
+
+        <script src="script.js"></script>
+
+</body>
+</html>
